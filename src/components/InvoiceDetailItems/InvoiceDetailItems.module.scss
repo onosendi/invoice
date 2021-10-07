@@ -1,0 +1,111 @@
+@use '../../styles/abstracts/mixins';
+
+.table {
+  --item-total-padding: 3.4rem;
+
+  display: block;
+  overflow: hidden;
+  padding: 2.4rem;
+  position: relative;
+
+  @include mixins.respond-to(md) {
+    border-collapse: separate;
+    border-spacing: 0 3.2rem;
+    display: table;
+    padding: calc(var(--item-total-padding) - 3.2rem) var(--item-total-padding);
+    position: unset;
+    width: 100%;
+
+    & thead {
+      display: table-header-group !important;
+    }
+
+    & tr {
+      display: table-row !important;
+
+      & td:nth-child(2) {
+        text-align: center;
+      }
+
+      & td:nth-child(3),
+      & td:nth-child(4) {
+        text-align: right;
+      }
+    }
+
+    & td {
+      display: table-cell !important;
+    }
+
+    & tbody {
+      display: table-row-group !important;
+    }
+  }
+
+  &HideForMobile {
+    left: -9999px;
+    position: absolute;
+    top: -9999px;
+
+    @include mixins.respond-to(md) {
+      position: unset;
+    }
+  }
+
+  & :is(thead, tr, td, tbody) {
+    display: block;
+  }
+
+  tbody tr {
+    position: relative;
+
+    @include mixins.respond-to(md) {
+      position: unset;
+    }
+
+    & + tr {
+      margin-top: 2.4rem;
+    }
+  }
+
+  tbody td {
+    &[data-item-quantity],
+    &[data-item-quantity]::before {
+      @include mixins.transition(color);
+
+      color: var(--theme-text4);
+      margin-top: 0.4rem;
+
+      @include mixins.respond-to(md) {
+        color: var(--theme-text1);
+      }
+    }
+
+    &[data-item-quantity]::before {
+      content: attr(data-item-quantity)' x ';
+
+      @include mixins.respond-to(md) {
+        content: unset;
+      }
+    }
+
+    &:last-child {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      @include mixins.respond-to(md) {
+        position: unset;
+        transform: unset;
+      }
+    }
+  }
+}
+
+.noData {
+  display: block;
+  padding-bottom: 3.2rem;
+  padding-top: 3.2rem;
+  text-align: center;
+}

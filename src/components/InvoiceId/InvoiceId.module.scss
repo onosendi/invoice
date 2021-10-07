@@ -1,0 +1,6 @@
+.invoiceId {
+  &::before {
+    color: var(--clr-primary-5);
+    content: '#';
+  }
+}

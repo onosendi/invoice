@@ -1,0 +1,7 @@
+@use '../../styles/abstracts/mixins';
+
+.popover {
+  @include mixins.z-index(modal);
+
+  position: absolute;
+}

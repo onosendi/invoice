@@ -1,0 +1,150 @@
+@use '../../styles/abstracts/mixins';
+
+.form {
+  fieldset {
+    border: unset;
+    margin: 0;
+    padding: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+
+      @include mixins.respond-to(md) {
+        margin-bottom: 4.8rem;
+      }
+    }
+  }
+
+  legend {
+    color: var(--clr-primary-3);
+    margin-bottom: 2.4rem;
+    padding: 0;
+  }
+}
+
+.fieldsetGrid {
+  display: grid;
+  grid-gap: 2.4rem;
+}
+
+.billFieldset {
+  grid-template-columns: repeat(2, 1fr);
+
+  @include mixins.respond-to(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.fromStreet {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+
+  @include mixins.respond-to(md) {
+    grid-column: 1 / span 3;
+  }
+}
+
+.fromCity {
+  grid-row: 2;
+
+  @include mixins.respond-to(md) {
+    grid-column: 1 / span 1;
+  }
+}
+
+.fromPostCode {
+  grid-row: 2;
+
+  @include mixins.respond-to(md) {
+    grid-column: 2 / span 1;
+  }
+}
+
+.fromCountry {
+  grid-column: 1 / span 2;
+  grid-row: 3;
+
+  @include mixins.respond-to(md) {
+    grid-column: 3 / span 1;
+    grid-row: 2;
+  }
+}
+
+.name,
+.email,
+.street {
+  grid-column: 1 / span 2;
+
+  @include mixins.respond-to(md) {
+    grid-column: 1 / span 3;
+  }
+}
+
+.name {
+  grid-row: 1;
+}
+
+.email {
+  grid-row: 2;
+}
+
+.street {
+  grid-row: 3;
+}
+
+.city {
+  grid-row: 4;
+}
+
+.postCode {
+  grid-row: 4;
+}
+
+.country {
+  grid-column: 1 / span 2;
+  grid-row: 5;
+
+  @include mixins.respond-to(md) {
+    grid-row: 4;
+    grid-column: 3 / span 1;
+  }
+}
+
+.fieldsetProjectInfo {
+  margin-bottom: 6.6rem !important;
+
+  @include mixins.respond-to(md) {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 4rem !important;
+  }
+}
+
+.description {
+  @include mixins.respond-to(md) {
+    grid-column: 1 / span 2;
+  }
+}
+
+.itemsHeadingWrapper {
+  align-items: center;
+  display: flex;
+  margin-bottom: 3.5rem;
+
+  @include mixins.respond-to(md) {
+    margin-bottom: 2.7;
+  }
+}
+
+.itemsHeading {
+  @include mixins.type(4);
+
+  color: var(--clr-primary-5);
+  display: block;
+  flex-grow: 1;
+  font-size: 1.8rem;
+}
+
+.noItemsError {
+  color: var(--clr-alert-error);
+  line-height: 1rem;
+}

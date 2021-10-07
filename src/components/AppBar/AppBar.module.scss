@@ -1,0 +1,73 @@
+@use '../../styles/abstracts/mixins';
+
+.appBar {
+  @include mixins.z-index(app-bar);
+
+  --primary-header-border-radius: 2rem;
+
+  align-items: center;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  height: 7.2rem;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+
+  @include mixins.respond-to(md) {
+    height: 8rem;
+  }
+
+  @include mixins.respond-to(lg) {
+    bottom: 0;
+    border-bottom-right-radius: var(--primary-header-border-radius);
+    border-top-right-radius: var(--primary-header-border-radius);
+    grid-template-columns: unset;
+    grid-template-rows: auto 1fr auto;
+    height: 100%;
+    right: unset;
+    top: 0;
+    width: 10.3rem;
+  }
+}
+
+.themeToggleContainer {
+  --margin: 2.3rem;
+
+  justify-self: end;
+  margin-right: var(--margin);
+
+  @include mixins.respond-to(md) {
+    --margin: 3.2rem;
+  }
+
+  @include mixins.respond-to(lg) {
+    align-self: end;
+    justify-self: center;
+    margin-right: unset;
+    margin-bottom: var(--margin);
+  }
+}
+
+.userContainer {
+  --border: 0.1rem solid var(--clr-primary-61);
+  --padding: 2.4rem;
+
+  align-items: center;
+  border-left: var(--border);
+  display: flex;
+  height: 100%;
+  padding: 0 var(--padding);
+
+  @include mixins.respond-to(md) {
+    --padding: 3.2rem;
+  }
+
+  @include mixins.respond-to(lg) {
+    border-left: unset;
+    border-top: var(--border);
+    height: unset;
+    padding: var(--padding) 0;
+  }
+}

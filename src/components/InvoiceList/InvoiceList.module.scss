@@ -1,0 +1,35 @@
+@use '../../styles/abstracts/mixins';
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  & > li + li {
+    margin-top: 1.6rem;
+  }
+}
+
+.noContent {
+  --no-content-top-margin: 10.2rem;
+
+  margin: var(--no-content-top-margin) auto 2rem auto;
+  text-align: center;
+  max-width: 21.7rem;
+
+  @include mixins.respond-to(md) {
+    max-width: 24.2rem;
+  }
+
+  & > img {
+    margin: 0 auto 4rem;
+
+    @include mixins.respond-to(md) {
+      margin-bottom: 6.5rem;
+    }
+  }
+
+  & > p + p {
+    margin-top: 2.4rem;
+  }
+}

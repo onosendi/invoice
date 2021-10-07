@@ -1,0 +1,25 @@
+@use '../abstracts/types';
+
+html {
+  font-size: 62.5%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+
+@each $type, $styles in types.$types {
+  @each $prop, $value in $styles {
+    .type-#{$type} {
+      #{$prop}: $value;
+    }
+  }
+}

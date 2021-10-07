@@ -1,0 +1,60 @@
+@use 'breakpoints';
+@use 'types';
+@use 'z-index';
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key(breakpoints.$breakpoints, $breakpoint) {
+    @media (min-width: #{inspect(map-get(breakpoints.$breakpoints, $breakpoint))}) {
+      @content;
+    }
+  }
+  @else {
+    @error 'Invalid breakpoint: `#{$breakpoint}`.';
+  }
+}
+
+@mixin transition($properties, $duration: 0.15s, $function: ease) {
+  transition-duration: $duration;
+  transition-property: $properties;
+  transition-timing-function: $function;
+}
+
+@mixin type($type) {
+  $key: map-get(types.$types, $type);
+
+  @if $key {
+    @each $property, $value in $key {
+      #{$property}: #{$value};
+    }
+  }
+  @else {
+    @error 'Invalid type: `#{$type}`.';
+  }
+}
+
+@mixin z-index($index: null, $step: 0) {
+  $z-index: 0;
+
+  @if $index {
+    @if map-has-key(z-index.$z-index, $index) {
+      $z-index: map-get(z-index.$z-index, $index);
+    }
+    @else {
+      @error 'Invalid index: `#{$index}`.';
+    }
+  }
+
+  z-index: $z-index + $step;
+}
+
+@mixin sr-only {
+  border: 0;
+  clip: rect(0,0,0,0);
+  font-size: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

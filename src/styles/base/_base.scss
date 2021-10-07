@@ -1,0 +1,24 @@
+@use '../abstracts/mixins';
+
+body {
+  @include mixins.transition(background-color);
+
+  background-color: var(--theme-bg1);
+}
+
+input {
+  -webkit-appearance: none;
+}
+
+.sr-only,
+[aria-hidden="true"] {
+  @include mixins.sr-only();
+}
+
+:focus {
+  outline: unset;
+}
+
+.bold {
+  font-weight: bold;
+}

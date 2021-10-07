@@ -1,0 +1,16 @@
+@use '../../styles/abstracts/mixins';
+
+.span {
+  @include mixins.transition(transform);
+
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iNyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMSAxbDQuMjI4IDQuMjI4TDkuNDU2IDEiIHN0cm9rZT0iIzdDNURGQSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=);
+  background-repeat: no-repeat;
+  background-size: 1.1rem;
+  display: block;
+  height: 0.7rem;
+  width: 1.1rem;
+}
+
+.open {
+  transform: rotate(-180deg);
+}

@@ -1,0 +1,25 @@
+@use '../../styles/abstracts/mixins';
+
+.parent {
+  &::before {
+    content: attr(data-alt-text);
+  }
+}
+
+.child {
+  display: none;
+}
+
+@each $size in [sm, md, lg] {
+  .#{$size} {
+    @include mixins.respond-to(#{$size}) {
+      .child {
+        display: inline;
+      }
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}

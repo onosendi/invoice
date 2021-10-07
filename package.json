@@ -1,0 +1,46 @@
+{
+  "name": "invoice",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon --watch .env --watch ./src/server ./src/server/index.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node ./src/server/index.js",
+    "lint": "eslint --ext js --ext jsx ./src"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.5.1",
+    "axios": "^0.21.1",
+    "clsx": "^1.1.1",
+    "connect-session-knex": "^2.1.0",
+    "convict": "^6.1.0",
+    "csurf": "^1.11.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.11.1",
+    "faker": "^5.5.3",
+    "knex": "^0.95.6",
+    "next": "^11.0.0",
+    "passport": "^0.4.1",
+    "pg": "^8.6.0",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-datepicker": "^4.1.1",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-next": "^11.0.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "nodemon": "^2.0.7",
+    "sass": "^1.34.0"
+  }
+}

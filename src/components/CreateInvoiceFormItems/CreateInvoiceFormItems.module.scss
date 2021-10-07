@@ -1,0 +1,152 @@
+@use '../../styles/abstracts/mixins';
+
+.itemContainer {
+  margin-bottom: 4.8rem;
+
+  @include mixins.respond-to(md) {
+    margin-bottom: 1.8rem;
+  }
+}
+
+.item {
+  $base: &;
+
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: minmax(4rem, 5rem) minmax(4rem, 9rem) 13% auto;
+
+  @include mixins.respond-to(md) {
+    grid-gap: 1.6rem;
+    grid-template-columns: 17.9rem 5.1rem 9rem 8.5rem auto;
+
+    &:not(:first-child) {
+      label > span,
+      #{$base}Total span {
+        &:first-child {
+          @include mixins.sr-only();
+        }
+
+        &:nth-child(2) {
+          margin-top: 1.7rem;
+        }
+      }
+
+      #{$base}Delete {
+        margin-top: 0.4rem;
+      }
+    }
+
+    &:first-child &Delete {
+      margin-top: 2.8rem;
+    }
+
+    &:first-child &Total span:nth-child(2) {
+      margin-top: 2.7rem;
+    }
+  }
+
+  & + & {
+    margin-top: 4.8rem;
+
+    @include mixins.respond-to(md) {
+      margin-top: 1.8rem;
+    }
+  }
+
+  &Name {
+    grid-row: 1;
+    grid-column: 1 / span 4;
+
+    @include mixins.respond-to(md) {
+      grid-column: 1 / span 1;
+    }
+  }
+
+  &Quantity {
+    grid-row: 2;
+
+    @include mixins.respond-to(md) {
+      grid-row: 1;
+    }
+  }
+
+  &Price {
+    grid-row: 2;
+
+    @include mixins.respond-to(md) {
+      grid-row: 1;
+    }
+  }
+
+  &Total {
+    grid-row: 2;
+
+    @include mixins.respond-to(md) {
+      grid-row: 1;
+    }
+  }
+
+  &Delete {
+    grid-row: 2;
+    justify-self: end;
+    margin-top: 3rem;
+
+    @include mixins.respond-to(md) {
+      grid-row: 1;
+    }
+  }
+
+  &Total {
+    span {
+      display: block;
+
+      &:nth-child(2) {
+        margin-top: 2.7rem;
+      }
+    }
+  }
+}
+
+.deleteButton {
+  background-color: transparent;
+  border: unset;
+  cursor: pointer;
+  margin-right: -1rem;
+  padding: 1rem;
+
+  &:hover > span,
+  &:focus > span {
+    background-color: var(--clr-primary-3);
+  }
+
+  & > span {
+    background-color: var(--clr-primary-5);
+    display: inline-block;
+    -webkit-mask: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTMiIGhlaWdodD0iMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTExLjU4MyAzLjU1NnYxMC42NjZjMCAuOTgyLS43OTUgMS43NzgtMS43NzcgMS43NzhIMi42OTRhMS43NzcgMS43NzcgMCAwMS0xLjc3Ny0xLjc3OFYzLjU1NmgxMC42NjZ6TTguNDczIDBsLjg4OC44ODloMy4xMTF2MS43NzhILjAyOFYuODg5aDMuMTFMNC4wMjkgMGg0LjQ0NHoiIGZpbGw9IiM4ODhFQjAiIGZpbGwtcnVsZT0ibm9uemVybyIvPjwvc3ZnPg==);
+    mask: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTMiIGhlaWdodD0iMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTExLjU4MyAzLjU1NnYxMC42NjZjMCAuOTgyLS43OTUgMS43NzgtMS43NzcgMS43NzhIMi42OTRhMS43NzcgMS43NzcgMCAwMS0xLjc3Ny0xLjc3OFYzLjU1NmgxMC42NjZ6TTguNDczIDBsLjg4OC44ODloMy4xMTF2MS43NzhILjAyOFYuODg5aDMuMTFMNC4wMjkgMGg0LjQ0NHoiIGZpbGw9IiM4ODhFQjAiIGZpbGwtcnVsZT0ibm9uemVybyIvPjwvc3ZnPg==);
+    mask-size: 100%;
+    height: 1.6rem;
+    padding: 0;
+    width: 1.244rem;
+  }
+}
+
+.inputNumber {
+  -moz-appearance: textfield;
+  appearance: textfield;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    appearance: none;
+  }
+}
+
+.newItemButtonError {
+  background-color: var(--clr-alert-error);
+  color: var(--clr-neutral-100);
+
+  &:focus,
+  &:hover {
+    background-color: var(--clr-secondary-0);
+  }
+}

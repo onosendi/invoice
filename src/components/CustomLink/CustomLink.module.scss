@@ -1,0 +1,13 @@
+@use '../../styles/abstracts/mixins';
+
+.link {
+  @include mixins.transition(color);
+
+  color: var(--clr-primary-3);
+  text-decoration: none;
+
+  &:focus,
+  &:hover {
+    color: var(--clr-primary-4);
+  }
+}

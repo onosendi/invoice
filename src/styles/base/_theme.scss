@@ -1,0 +1,167 @@
+@use '../abstracts/mixins';
+
+body {
+  --theme-bg1: var(--clr-primary-0);
+  --theme-bg2: var(--clr-neutral-100);
+  --theme-bg3: var(--clr-primary-62);
+  --theme-bg4: var(--clr-primary-2);
+  --theme-bg5: var(--clr-primary-0);
+  --theme-bg6: var(--clr-primary-62);
+  --theme-bg7: var(--clr-neutral-100);
+  --theme-bg8: hsla(233, 20%, 27%, 0.0571);
+  --theme-bg9: var(--clr-primary-1);
+  --theme-bg10: var(--clr-neutral-100);
+  --theme-bg11: var(--clr-neutral-100);
+  --theme-text1: var(--clr-primary-10);
+  --theme-text2: var(--clr-primary-6);
+  --theme-text3: var(--clr-primary-62);
+  --theme-text4: var(--clr-primary-6);
+  --theme-btn3-bg: var(--clr-primary-1);
+  --theme-btn3-bg-hover: var(--clr-primary-2);
+  --theme-btn3-text: var(--clr-primary-6);
+  --theme-btn4-bg-hover: var(--clr-primary-10);
+  --theme-btn4-text: var(--clr-primary-5);
+  --theme-btn6-bg: var(--clr-primary-1);
+  --theme-btn6-bg-hover: var(--clr-primary-2);
+  --theme-btn6-text: var(--clr-primary-6);
+  --theme-input-stroke: var(--clr-primary-2);
+  --theme-select-border: var(--clr-primary-2);
+  --theme-drop-shadow: hsla(232, 38%, 45%, 0.25);
+  --theme-na: 0.3;
+}
+
+body[data-theme="dark"] {
+  --theme-bg1: var(--clr-primary-9);
+  --theme-bg2: var(--clr-primary-8);
+  --theme-bg3: var(--clr-primary-10);
+  --theme-bg4: var(--clr-primary-8);
+  --theme-bg5: var(--clr-primary-7);
+  --theme-bg6: var(--clr-primary-8);
+  --theme-bg7: var(--clr-primary-7);
+  --theme-bg8: hsla(231, 73%, 93%, 0.0571);
+  --theme-bg9: var(--clr-primary-7);
+  --theme-bg10: var(--clr-primary-9);
+  --theme-bg11: var(--clr-primary-7);
+  --theme-text1: var(--clr-neutral-100);
+  --theme-text2: var(--clr-primary-2);
+  --theme-text3: var(--clr-primary-2);
+  --theme-text4: var(--clr-primary-5);
+  --theme-btn3-bg: var(--clr-primary-7);
+  --theme-btn3-bg-hover: var(--clr-neutral-100);
+  --theme-btn3-text: var(--clr-primary-2);
+  --theme-btn4-bg-hover: var(--clr-primary-8);
+  --theme-btn4-text: var(--clr-primary-2);
+  --theme-btn6-bg: var(--clr-primary-7);
+  --theme-btn6-bg-hover: var(--clr-primary-8);
+  --theme-btn6-text: var(--clr-primary-5);
+  --theme-input-stroke: var(--clr-primary-7);
+  --theme-select-border: var(--clr-primary-8);
+  --theme-drop-shadow: hsla(0, 0%, 0%, 0.45);
+  --theme-na: 0.1;
+}
+
+.theme-bg2 {
+  @include mixins.transition(background-color);
+
+  background-color: var(--theme-bg2);
+}
+
+.theme-bg3 {
+  @include mixins.transition(background-color);
+
+  background-color: var(--theme-bg3);
+}
+
+.theme-bg4 {
+  @include mixins.transition(background-color);
+
+  background-color: var(--theme-bg4);
+}
+
+.theme-bg5 {
+  @include mixins.transition(background-color);
+
+  background-color: var(--theme-bg5);
+}
+
+.theme-bg6 {
+  @include mixins.transition(background-color);
+
+  background-color: var(--theme-bg6);
+}
+
+.theme-bg7 {
+  @include mixins.transition(background-color);
+
+  background-color: var(--theme-bg7);
+}
+
+.theme-bg8 {
+  @include mixins.transition(background-color);
+
+  background-color: var(--theme-bg8);
+}
+
+.theme-bg9 {
+  @include mixins.transition(background-color);
+
+  background-color: var(--theme-bg9);
+}
+
+.theme-bg10 {
+  @include mixins.transition(background-color);
+
+  background-color: var(--theme-bg10);
+}
+
+.theme-bg11 {
+  @include mixins.transition(background-color);
+
+  background-color: var(--theme-bg11);
+}
+
+.theme-text1 {
+  @include mixins.transition(color);
+
+  color: var(--theme-text1);
+}
+
+.theme-text2 {
+  @include mixins.transition(color);
+
+  color: var(--theme-text2);
+}
+
+.theme-text3 {
+  @include mixins.transition(color);
+
+  color: var(--theme-text3);
+}
+
+.theme-text4 {
+  @include mixins.transition(color);
+
+  color: var(--theme-text4);
+}
+
+.theme-input-stroke {
+  @include mixins.transition(border-color);
+
+  border-color: var(--theme-input-stroke);
+}
+
+.theme-select-border {
+  @include mixins.transition(border-color);
+
+  border-color: var(--theme-select-border);
+}
+
+.theme-drop-shadow {
+  @include mixins.transition(box-shadow);
+
+  box-shadow: 0 1rem 2rem var(--theme-drop-shadow);
+}
+
+.theme-na {
+  opacity: var(--theme-na);
+}

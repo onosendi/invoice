@@ -1,0 +1,38 @@
+@use '../../styles/abstracts/mixins';
+
+.backdrop {
+  @include mixins.z-index(backdrop);
+
+  background-color: hsla(0, 0%, 0%, 0.5);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.open {
+  animation: open 0.25s ease forwards;
+}
+
+.close {
+  animation: close 0.25s ease forwards;
+}
+
+@keyframes open {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes close {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

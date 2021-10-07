@@ -1,0 +1,66 @@
+@use '../../styles/abstracts/mixins';
+
+.logo {
+  --logo-border-radius: 2rem;
+
+  align-items: center;
+  background-color: var(--clr-primary-3);
+  border-bottom-right-radius: var(--logo-border-radius);
+  border-top-right-radius: var(--logo-border-radius);
+  display: flex;
+  height: 7.2rem;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: 7.2rem;
+
+  @include mixins.respond-to(md) {
+    width: 8rem;
+  }
+
+  @include mixins.respond-to(lg) {
+    height: 10.3rem;
+    width: 100%;
+  }
+
+  &::before {
+    @include mixins.z-index(app-bar, 1);
+
+    background-color: var(--clr-primary-4);
+    border-top-left-radius: var(--logo-border-radius);
+    content: '';
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+  }
+
+  &::after {
+    @include mixins.transition(transform);
+    @include mixins.z-index(app-bar, 2);
+
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyNiI+PHBhdGggZmlsbD0iI0ZGRiIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMjAuNTEzIDBDMjQuOTY1IDIuMzA5IDI4IDYuOTEgMjggMTIuMjEgMjggMTkuODI2IDIxLjczMiAyNiAxNCAyNlMwIDE5LjgyNiAwIDEyLjIxQzAgNi45MSAzLjAzNSAyLjMwOSA3LjQ4NyAwTDE0IDEyLjl6Ii8+PC9zdmc+);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    content: '';
+    display: block;
+    height: 2.6rem;
+    position: absolute;
+    width: 2.8rem;
+
+    @include mixins.respond-to(md) {
+      height: 2.9rem;
+      width: 3.1rem;
+    }
+
+    @include mixins.respond-to(lg) {
+      height: 3.771rem;
+      width: 4rem;
+    }
+  }
+
+  &:focus::after,
+  &:hover::after {
+    transform: scale(119%);
+  }
+}

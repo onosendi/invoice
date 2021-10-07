@@ -1,0 +1,54 @@
+@use '../../styles/abstracts/mixins';
+
+.main {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  padding: 2rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.contentWrapper {
+  max-width: 40rem;
+  width: 100%;
+
+  & > a,
+  & > button {
+    margin-top: 2rem;
+  }
+}
+
+.logoWrapper {
+  margin: 0 auto 6rem auto;
+  text-align: center;
+  width: 12rem;
+
+  & > a {
+    margin: 0 auto;
+  }
+
+  & > h1 {
+    margin-top: 2rem;
+  }
+}
+
+.logo {
+  border-radius: 2rem;
+  height: 10.3rem !important;
+  width: 12.3rem !important;
+
+  &::after {
+    height: 4rem !important;
+    width: 4rem !important;
+  }
+}
+
+.button {
+  @include mixins.type(3);
+
+  min-height: 6rem;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}

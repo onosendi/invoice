@@ -1,0 +1,81 @@
+@use '../../styles/abstracts/mixins';
+
+.label {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  position: relative;
+
+  &:hover .checkbox {
+    --checkbox-border-color: var(--clr-primary-3);
+  }
+
+  &:focus-within .labelText {
+    color: var(--clr-primary-3);
+  }
+}
+
+.input {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox {
+  @include mixins.transition((background-color, border-color));
+
+  --checkbox-size: 1.4rem;
+
+  align-items: center;
+  display: flex;
+  border: 0.1rem solid var(--checkbox-border-color, transparent);
+  border-radius: 0.2rem;
+  height: var(--checkbox-size);
+  justify-content: center;
+  position: relative;
+  width: var(--checkbox-size);
+
+  &Checked {
+    background-color: var(--clr-primary-3);
+
+    & .checkmark {
+      opacity: 1;
+    }
+  }
+}
+
+.checkmark {
+  @include mixins.transition(opacity);
+
+  margin: 0.1rem 0 0 -0.8rem;
+  opacity: 0;
+  transform: rotate(-45deg);
+
+  &::before,
+  &::after {
+    background-color: var(--clr-neutral-100);
+    content: '';
+    left: 0;
+    position: absolute;
+  }
+
+  &::before {
+    height: 0.4rem;
+    top: 0;
+    width: 0.2rem;
+  }
+
+  &::after {
+    height: 0.2rem;
+    top: 0.2rem;
+    width: 0.8rem;
+  }
+}
+
+.labelText {
+  @include mixins.transition(color);
+
+  left: 2.8rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(calc(-50% + 0.15rem));
+}

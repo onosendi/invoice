@@ -1,0 +1,81 @@
+@use '../../styles/abstracts/mixins';
+
+.item {
+  @include mixins.transition((background-color, border-color));
+
+  border: 0.1rem solid var(--invoice-list-item-border-color, transparent);
+  border-radius: 0.8rem;
+  display: block;
+  min-height: 13.4rem;
+  // padding: 2.4rem;
+  position: relative;
+  text-decoration: none;
+
+  @include mixins.respond-to(md) {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyIgaGVpZ2h0PSIxMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMSAxbDQgNC00IDQiIHN0cm9rZT0iIzdDNURGQSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=);
+    background-position: center right 2.2rem;
+    background-repeat: no-repeat;
+    min-height: 7.2rem;
+    // padding: 2.8rem 4.8rem 2.8rem 3.2rem;
+  }
+
+  & > * {
+    position: absolute;
+
+    @include mixins.respond-to(md) {
+      top: 50% !important;
+      transform: translateY(-50%);
+    }
+  }
+
+  &:focus,
+  &:hover {
+    --invoice-list-item-border-color: var(--clr-primary-3);
+  }
+}
+
+.invoiceId {
+  left: 2.5rem;
+  top: 2.4rem;
+}
+
+.dueDate {
+  left: 2.5rem;
+  top: 6.3rem;
+
+  @include mixins.respond-to(md) {
+    left: 11.1rem;
+  }
+}
+
+.total {
+  left: 2.5rem;
+  top: 8.6rem;
+
+  @include mixins.respond-to(md) {
+    left: unset;
+    right: 19.2rem;
+  }
+}
+
+.name {
+  max-width: 15rem;
+  overflow: hidden;
+  right: 2.5rem;
+  text-overflow: ellipsis;
+  top: 2.4rem;
+  white-space: nowrap;
+
+  @include mixins.respond-to(md) {
+    left: 22rem;
+  }
+}
+
+.status {
+  right: 2.5rem;
+  top: 6.6rem;
+
+  @include mixins.respond-to(md) {
+    right: 4.8rem;
+  }
+}

@@ -1,0 +1,13 @@
+[Unit]
+Description=invoice node server
+After=network.target
+
+[Service]
+Restart=always
+RestartSec=10
+WorkingDirectory=/var/www/vhosts/invoice/htdocs/invoice
+Environment=NODE_ENV=production
+ExecStart=/var/www/vhosts/invoice/.nvm/versions/node/v16.3.0/bin/node /var/www/vhosts/invoice/htdocs/invoice/src/server/index.js
+
+[Install]
+WantedBy=default.target

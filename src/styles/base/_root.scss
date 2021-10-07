@@ -1,0 +1,9 @@
+@use '../abstracts/palette';
+
+:root {
+  @each $color, $shades in palette.$palette {
+    @each $shade, $value in $shades {
+      --clr-#{$color}-#{$shade}: #{$value};
+    }
+  }
+}

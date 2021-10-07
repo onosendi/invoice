@@ -1,0 +1,21 @@
+.wrapper {
+  position: relative;
+}
+
+.input {
+  cursor: pointer;
+  text-align: left;
+
+  &::before {
+    --datefield-calendar-size: 1.5rem;
+
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE0IDJoLS42NjdWLjY2N0EuNjY3LjY2NyAwIDAwMTIuNjY3IDBIMTJhLjY2Ny42NjcgMCAwMC0uNjY3LjY2N1YySDQuNjY3Vi42NjdBLjY2Ny42NjcgMCAwMDQgMGgtLjY2N2EuNjY3LjY2NyAwIDAwLS42NjYuNjY3VjJIMkMuODk3IDIgMCAyLjg5NyAwIDR2MTBjMCAxLjEwMy44OTcgMiAyIDJoMTJjMS4xMDMgMCAyLS44OTcgMi0yVjRjMC0xLjEwMy0uODk3LTItMi0yem0uNjY3IDEyYzAgLjM2Ny0uMy42NjctLjY2Ny42NjdIMkEuNjY4LjY2OCAwIDAxMS4zMzMgMTRWNi42OTNoMTMuMzM0VjE0eiIgZmlsbD0iIzdFODhDMyIgZmlsbC1ydWxlPSJub256ZXJvIiBvcGFjaXR5PSIuNSIvPjwvc3ZnPg==);
+    background-repeat: no-repeat;
+    background-size: var(--datefield-calendar-size);
+    content: '';
+    position: absolute;
+    height: var(--datefield-calendar-size);
+    right: 1.6rem;
+    width: var(--datefield-calendar-size);
+  }
+}

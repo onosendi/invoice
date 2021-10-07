@@ -1,0 +1,14 @@
+.link {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyIgaGVpZ2h0PSIxMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNi4zNDIuODg2TDIuMTE0IDUuMTE0bDQuMjI4IDQuMjI4IiBzdHJva2U9IiM5Mjc3RkYiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+);
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-size: 0.846rem;
+  display: inline-block;
+  padding: 0.2rem 0 0 2.8rem;
+  text-decoration: none;
+
+  &:focus,
+  &:hover {
+    color: var(--clr-primary-4);
+  }
+}

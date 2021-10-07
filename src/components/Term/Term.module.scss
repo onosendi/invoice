@@ -1,0 +1,106 @@
+@use '../../styles/abstracts/mixins';
+
+.wrapper {
+  position: relative;
+}
+
+.display {
+  @include mixins.transition((background-color, border-color, color));
+
+  border-radius: 0.4rem;
+  border-style: solid;
+  border-width: 0.1rem;
+  cursor: pointer;
+  min-height: 4.6rem;
+  padding: 1.6rem;
+  position: relative;
+  text-align: left;
+  width: 100%;
+
+  &:focus {
+    border-color: var(--clr-primary-4);
+  }
+
+  &::before {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iNyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMSAxbDQuMjI4IDQuMjI4TDkuNDU2IDEiIHN0cm9rZT0iIzdDNURGQSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=);
+    background-repeat: no-repeat;
+    background-position: center right 1.6rem;
+    content: '';
+    height: 100%;
+    position: absolute;
+    transform: translate(-1.6rem, -1.6rem);
+    width: 100%;
+  }
+}
+
+.list {
+  @include mixins.z-index(drawer);
+
+  border-radius: 0.8rem;
+  list-style: none;
+  margin-top: 0.8rem;
+  padding-left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.open {
+  animation: open 0.25s ease forwards;
+}
+
+.close {
+  animation: close 0.25s ease forwards;
+}
+
+@keyframes open {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes close {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.item {
+  @include mixins.transition((background-color, border-color, color));
+
+  --select-item-border-radius: 0.8rem;
+
+  cursor: pointer;
+  min-height: 4.6rem;
+  padding: 1.6rem;
+
+  &:not(:last-child) {
+    border-bottom-style: solid;
+    border-bottom-width: 0.1rem;
+  }
+
+  &:first-child {
+    border-top-left-radius: var(--select-item-border-radius);
+    border-top-right-radius: var(--select-item-border-radius);
+  }
+
+  &:last-child {
+    border-bottom-left-radius: var(--select-item-border-radius);
+    border-bottom-right-radius: var(--select-item-border-radius);
+  }
+
+  &:focus,
+  &:hover {
+    color: var(--clr-primary-4);
+  }
+
+  &Active {
+    background-color: var(--clr-primary-3);
+    color: var(--clr-neutral-100) !important;
+  }
+}

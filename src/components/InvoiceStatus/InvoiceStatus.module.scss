@@ -1,0 +1,38 @@
+@use '../../styles/abstracts/mixins';
+
+.status {
+  background-color: var(--invoice-status-bg-color);
+  border-radius: 0.6rem;
+  color: var(--invoice-status-color);
+  display: inline-block;
+  min-width: 10.4rem;
+  padding: 1.4rem 1.7rem;
+  text-align: center;
+  text-transform: capitalize;
+
+  & > span {
+    --invoice-status-dot-size: 0.8rem;
+
+    background-color: var(--invoice-status-color);
+    border-radius: 50%;
+    display: inline-block;
+    height: var(--invoice-status-dot-size);
+    margin-right: 0.9rem;
+    width: var(--invoice-status-dot-size);
+  }
+}
+
+.draft {
+  --invoice-status-bg-color: var(--theme-bg8);
+  --invoice-status-color: var(--theme-text3);
+}
+
+.paid {
+  --invoice-status-bg-color: hsla(159, 66%, 51%, 0.0571);
+  --invoice-status-color: var(--clr-alert-success);
+}
+
+.pending {
+  --invoice-status-bg-color: hsla(33, 100%, 50%, 0.0571);
+  --invoice-status-color: var(--clr-alert-warning);
+}

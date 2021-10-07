@@ -1,0 +1,46 @@
+@use '../../styles/abstracts/mixins';
+
+.container {
+  padding-bottom: 4rem;
+  padding-top: calc(3.2rem + 7.2rem);
+
+  @include mixins.respond-to(md) {
+    padding-top: calc(5.6rem + 8rem);
+  }
+
+  @include mixins.respond-to(lg) {
+    padding-top: 7.2rem;
+  }
+}
+
+.header {
+  align-items: center;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  margin-bottom: 3.2rem;
+
+  & > div:first-of-type {
+    padding-right: 1rem;
+  }
+
+  & h2 {
+    @include mixins.type(2);
+
+    margin-bottom: 0.4rem;
+
+    @include mixins.respond-to(md) {
+      @include mixins.type(1);
+
+      margin-bottom: 0.8rem;
+    }
+  }
+
+  & > button:first-of-type {
+    justify-self: end;
+    margin-right: 1.8rem;
+
+    @include mixins.respond-to(md) {
+      margin-right: 4rem;
+    }
+  }
+}
